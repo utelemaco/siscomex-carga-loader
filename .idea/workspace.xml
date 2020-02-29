@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1fd9d33-510f-445c-8e09-31ad09751f51" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YSxyES9Eq3iW2OXqyw4nmf1wF7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.owse.siscomexFileLoader.domain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.owse.siscomexFileLoader.loader" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ArquivoSiscomexCargaLoaderTest">
+    <configuration name="ArquivoSiscomexCargaLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.ArquivoSiscomexCargaLoaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArquivoSiscomexCargaLoaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.ArquivoSiscomexCargaLoaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinhaTipo5ItemCargaLoaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo5ItemCargaLoaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinhaTipo6NCMLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo6NCMLoaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinhaTipo6NCMLoaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo6NCMLoaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="siscomex-carga-loader" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="siscomex-carga-loader" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest" />
+        <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest.test" />
+        <item itemvalue="JUnit.LinhaTipo6NCMLoaderTest" />
+        <item itemvalue="JUnit.LinhaTipo6NCMLoaderTest.test" />
+        <item itemvalue="JUnit.LinhaTipo5ItemCargaLoaderTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1fd9d33-510f-445c-8e09-31ad09751f51" name="Default Changelist" comment="" />
+      <created>1582950048721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582950048721</updated>
+      <workItem from="1582950053489" duration="10763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2145" y="313" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1582950322812">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state x="2145" y="313" key="#com.intellij.ide.util.PackageChooserDialog/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582950322812" />
+    <state x="2186" y="415" width="460" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582950324489">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state x="2186" y="415" width="460" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582950324489" />
+    <state x="1440" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582958978177">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state x="1440" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582958978177" />
+    <state width="1235" height="272" key="GridCell.Tab.0.bottom" timestamp="1582961046342">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="272" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046342" />
+    <state width="1235" height="272" key="GridCell.Tab.0.center" timestamp="1582961046341">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="272" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046341" />
+    <state width="1235" height="272" key="GridCell.Tab.0.left" timestamp="1582961046341">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="272" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046341" />
+    <state width="1235" height="272" key="GridCell.Tab.0.right" timestamp="1582961046342">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="272" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046342" />
+    <state width="1235" height="336" key="GridCell.Tab.1.bottom" timestamp="1582960987032">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="336" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987032" />
+    <state width="1235" height="336" key="GridCell.Tab.1.center" timestamp="1582960987031">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="336" key="GridCell.Tab.1.center/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987031" />
+    <state width="1235" height="336" key="GridCell.Tab.1.left" timestamp="1582960987031">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="336" key="GridCell.Tab.1.left/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987031" />
+    <state width="1235" height="336" key="GridCell.Tab.1.right" timestamp="1582960987032">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state width="1235" height="336" key="GridCell.Tab.1.right/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987032" />
+    <state x="2065" y="245" width="670" height="676" key="search.everywhere.popup" timestamp="1582954974933">
+      <screen x="1440" y="23" width="1920" height="1005" />
+    </state>
+    <state x="2065" y="245" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582954974933" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo1EscalaLoaderTest.groovy</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo2ManifestoLoaderTest.groovy</url>
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo3ConteinerVazioLoaderTest.groovy</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo4CEMercanteLoaderTest.groovy</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo4CEMercanteLoaderTest.groovy</url>
+          <line>13</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo5ItemCargaLoaderTest.groovy</url>
+          <line>13</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/LinhaTipo6NCMLoaderTest.groovy</url>
+          <line>15</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/ArquivoSiscomexCargaLoaderTest.groovy</url>
+          <line>41</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
