@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1fd9d33-510f-445c-8e09-31ad09751f51" name="Default Changelist" comment="" />
+    <list default="true" id="f1fd9d33-510f-445c-8e09-31ad09751f51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexCEMercante.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexConteinerVazio.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexEscala.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexItemCarga.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexManifesto.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/domain/SiscomexNCM.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/loader/SiscomexCargaLoader.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/raw/LinhaTipo5ItemCarga.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/raw/LinhaTipo5ItemCarga.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/ArquivoSiscomexCargaLoaderTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/ArquivoSiscomexCargaLoaderTest.groovy" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YSxyES9Eq3iW2OXqyw4nmf1wF7" />
   <component name="ProjectViewState">
@@ -15,6 +30,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -33,7 +49,7 @@
       <recent name="com.owse.siscomexFileLoader.loader" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArquivoSiscomexCargaLoaderTest">
+  <component name="RunManager" selected="JUnit.ArquivoSiscomexCargaLoaderTest.testFromFile">
     <configuration name="ArquivoSiscomexCargaLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="siscomex-carga-loader" />
       <extension name="coverage">
@@ -65,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinhaTipo5ItemCargaLoaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArquivoSiscomexCargaLoaderTest.testFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="siscomex-carga-loader" />
       <extension name="coverage">
         <pattern>
@@ -74,8 +90,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
-      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo5ItemCargaLoaderTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.ArquivoSiscomexCargaLoaderTest" />
+      <option name="METHOD_NAME" value="testFromFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArquivoSiscomexCargaLoaderTest.testSiscomexCargaLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="siscomex-carga-loader" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
+      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.ArquivoSiscomexCargaLoaderTest" />
+      <option name="METHOD_NAME" value="testSiscomexCargaLoader" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,22 +124,6 @@
       <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
       <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo6NCMLoaderTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinhaTipo6NCMLoaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="siscomex-carga-loader" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.owse.siscomexCargaLoader.loader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.owse.siscomexCargaLoader.loader" />
-      <option name="MAIN_CLASS_NAME" value="com.owse.siscomexCargaLoader.loader.LinhaTipo6NCMLoaderTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest.testFromFile" />
+        <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest.testSiscomexCargaLoader" />
         <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest" />
         <item itemvalue="JUnit.ArquivoSiscomexCargaLoaderTest.test" />
         <item itemvalue="JUnit.LinhaTipo6NCMLoaderTest" />
-        <item itemvalue="JUnit.LinhaTipo6NCMLoaderTest.test" />
-        <item itemvalue="JUnit.LinhaTipo5ItemCargaLoaderTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +207,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582950048721</updated>
-      <workItem from="1582950053489" duration="10763000" />
+      <workItem from="1582950053489" duration="22574000" />
     </task>
     <servers />
   </component>
@@ -211,37 +227,45 @@
       <screen x="1440" y="23" width="1920" height="1005" />
     </state>
     <state x="1440" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582958978177" />
-    <state width="1235" height="272" key="GridCell.Tab.0.bottom" timestamp="1582961046342">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="272" key="GridCell.Tab.0.bottom" timestamp="1583138416004">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="272" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583138416004" />
     <state width="1235" height="272" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046342" />
-    <state width="1235" height="272" key="GridCell.Tab.0.center" timestamp="1582961046341">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="272" key="GridCell.Tab.0.center" timestamp="1583138416003">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="272" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583138416003" />
     <state width="1235" height="272" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046341" />
-    <state width="1235" height="272" key="GridCell.Tab.0.left" timestamp="1582961046341">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="272" key="GridCell.Tab.0.left" timestamp="1583138416002">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="272" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583138416002" />
     <state width="1235" height="272" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046341" />
-    <state width="1235" height="272" key="GridCell.Tab.0.right" timestamp="1582961046342">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="272" key="GridCell.Tab.0.right" timestamp="1583138416003">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="272" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583138416003" />
     <state width="1235" height="272" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582961046342" />
-    <state width="1235" height="336" key="GridCell.Tab.1.bottom" timestamp="1582960987032">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="335" key="GridCell.Tab.1.bottom" timestamp="1583137539440">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="335" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583137539440" />
     <state width="1235" height="336" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987032" />
-    <state width="1235" height="336" key="GridCell.Tab.1.center" timestamp="1582960987031">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="335" key="GridCell.Tab.1.center" timestamp="1583137539440">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="335" key="GridCell.Tab.1.center/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583137539440" />
     <state width="1235" height="336" key="GridCell.Tab.1.center/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987031" />
-    <state width="1235" height="336" key="GridCell.Tab.1.left" timestamp="1582960987031">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="335" key="GridCell.Tab.1.left" timestamp="1583137539439">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="335" key="GridCell.Tab.1.left/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583137539439" />
     <state width="1235" height="336" key="GridCell.Tab.1.left/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987031" />
-    <state width="1235" height="336" key="GridCell.Tab.1.right" timestamp="1582960987032">
-      <screen x="1440" y="23" width="1920" height="1005" />
+    <state width="1610" height="335" key="GridCell.Tab.1.right" timestamp="1583137539440">
+      <screen x="1440" y="23" width="1920" height="1004" />
     </state>
+    <state width="1610" height="335" key="GridCell.Tab.1.right/0.23.1440.877/1440.23.1920.1004@1440.23.1920.1004" timestamp="1583137539440" />
     <state width="1235" height="336" key="GridCell.Tab.1.right/0.23.1440.877/1440.23.1920.1005@1440.23.1920.1005" timestamp="1582960987032" />
     <state x="2065" y="245" width="670" height="676" key="search.everywhere.popup" timestamp="1582954974933">
       <screen x="1440" y="23" width="1920" height="1005" />
@@ -287,9 +311,19 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/owse/siscomexCargaLoader/loader/SiscomexCargaLoader.groovy</url>
+          <line>152</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/ArquivoSiscomexCargaLoaderTest.groovy</url>
-          <line>41</line>
-          <option name="timeStamp" value="10" />
+          <line>48</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/owse/siscomexCargaLoader/loader/ArquivoSiscomexCargaLoaderTest.groovy</url>
+          <line>71</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

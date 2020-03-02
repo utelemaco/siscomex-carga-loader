@@ -1,7 +1,7 @@
-package com.owse.siscomexCargaLoader.raw
+package com.owse.siscomexCargaLoader.domain
 
-class LinhaTipo5ItemCarga {
-    String tipoRegistro
+class SiscomexItemCarga {
+
     String numeroCEMercante
     String numeroItemCarga
     String codigoTipoItem
@@ -36,5 +36,8 @@ class LinhaTipo5ItemCarga {
     String descricaoBloqueioEscala03
     String codigoBloqueioEscala04
     String descricaoBloqueioEscala04
-    String indicadorFimRegistro
+
+    SiscomexCEMercante ceMercante
+    List<SiscomexNCM> ncms = []
+
 }
