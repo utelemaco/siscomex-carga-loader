@@ -22,4 +22,9 @@ class SiscomexEscala {
 
     List<SiscomexManifesto> manifestos = []
 
+    List<SiscomexConteinerVazio> conteinerVazioNaoVinculados = []
+    List<SiscomexCEMercante> cesMercantesNaoVinculados = []
+    List<SiscomexItemCarga> itensCargaNaoVinculados = []
+    List<SiscomexNCM> ncmsNaoVinculados = []
+
 }

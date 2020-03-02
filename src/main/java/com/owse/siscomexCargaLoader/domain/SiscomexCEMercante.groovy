@@ -83,88 +83,53 @@ class SiscomexCEMercante {
     String codigoUnidadeLocalDestinoFinalCarga
 
     SiscomexManifesto manifesto
-    SiscomexCEMercante ceMercanteMBL
-    List<SiscomexCEMercante> cesMercantesHBL = []
+    SiscomexCEMercante ceMercanteMaster
+    List<SiscomexCEMercante> cesMercantesHouse = []
     List<SiscomexItemCarga> itensCarga = []
 
-    String getUltimoNumeroManifesto() {
+    List<String> getNumerosManifestosValidos() {
+        List<String> numerosManifestosValidos = []
         if (numeroManifesto10) {
-            return numeroManifesto10
+            numerosManifestosValidos << numeroManifesto10
         }
 
         if (numeroManifesto09) {
-            return numeroManifesto09
+            numerosManifestosValidos << numeroManifesto09
         }
 
         if (numeroManifesto08) {
-            return numeroManifesto08
+            numerosManifestosValidos << numeroManifesto08
         }
 
         if (numeroManifesto07) {
-            return numeroManifesto07
+            numerosManifestosValidos << numeroManifesto07
         }
 
         if (numeroManifesto06) {
-            return numeroManifesto06
+            numerosManifestosValidos << numeroManifesto06
         }
 
         if (numeroManifesto05) {
-            return numeroManifesto05
+            numerosManifestosValidos << numeroManifesto05
         }
 
         if (numeroManifesto04) {
-            return numeroManifesto04
+            numerosManifestosValidos << numeroManifesto04
         }
 
         if (numeroManifesto03) {
-            return numeroManifesto03
+            numerosManifestosValidos << numeroManifesto03
         }
 
         if (numeroManifesto02) {
-            return numeroManifesto02
+            numerosManifestosValidos << numeroManifesto02
         }
 
         if (numeroManifesto01) {
-            return numeroManifesto01
+            numerosManifestosValidos << numeroManifesto01
         }
+
+        return numerosManifestosValidos
     }
 
-    String getPenultimoNumeroManifesto() {
-        if (numeroManifesto10) {
-            return numeroManifesto09
-        }
-
-        if (numeroManifesto09) {
-            return numeroManifesto08
-        }
-
-        if (numeroManifesto08) {
-            return numeroManifesto07
-        }
-
-        if (numeroManifesto07) {
-            return numeroManifesto06
-        }
-
-        if (numeroManifesto06) {
-            return numeroManifesto05
-        }
-
-        if (numeroManifesto05) {
-            return numeroManifesto04
-        }
-
-        if (numeroManifesto04) {
-            return numeroManifesto03
-        }
-
-        if (numeroManifesto03) {
-            return numeroManifesto02
-        }
-
-        if (numeroManifesto02) {
-            return numeroManifesto01
-        }
-
-    }
 }

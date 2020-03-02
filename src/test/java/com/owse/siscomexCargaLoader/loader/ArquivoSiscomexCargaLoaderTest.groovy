@@ -45,10 +45,27 @@ class ArquivoSiscomexCargaLoaderTest {
     }
 
     @Test
-    public void testFromFile () {
-        File file = new File('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
+    public void testFromFileF_C079314127_D190903_H102708_M012() {
+        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
+        assert escala
+    }
+
+    @Test
+    public void testFromFileF_C088813997_D190430_H113147_M658 () {
+        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C088813997_D190430_H113147_M658.txt')
+        assert escala
+    }
+
+    @Test
+    public void testFromFileF_C103801527_D200128_H094042_M410 () {
+        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C103801527_D200128_H094042_M410.txt')
+        assert escala
+    }
+
+    private SiscomexEscala fileToEscala(String filePathAndName) {
+        File file = new File(filePathAndName)
         println new Date()
-        SiscomexCargaLoader loader  = new SiscomexCargaLoader()
+        SiscomexCargaLoader loader = new SiscomexCargaLoader()
         SiscomexEscala escala = loader.loadFromByteArray(file.getBytes())
         println new Date()
         int i = 1;
@@ -60,7 +77,10 @@ class ArquivoSiscomexCargaLoaderTest {
             }
 
             manifesto.cesMercantes.each { ceMercante ->
-                println "${i++}         CEMercante: ${ceMercante.tipoConhecimento}-${ceMercante.numeroCEMercante}"
+                println "${i++}         CEMercante: ${ceMercante.tipoConhecimento}-${ceMercante.numeroCEMercante}   - Master: ${ceMercante.ceMercanteMaster?.numeroCEMercante}"
+                ceMercante.cesMercantesHouse.each { ceMercanteHouse ->
+                    println"                    ##### =====> ${ceMercanteHouse.tipoConhecimento}-${ceMercanteHouse.numeroCEMercante}   - Master: ${ceMercanteHouse.ceMercanteMaster?.numeroCEMercante}"
+                }
                 ceMercante.itensCarga.each { itemCarga ->
                     println "${i++}             ItemCarga: ${itemCarga.numeroItemCarga}"
                     itemCarga.ncms.each { ncm ->
@@ -69,6 +89,6 @@ class ArquivoSiscomexCargaLoaderTest {
                 }
             }
         }
-        assert escala
+        escala
     }
 }

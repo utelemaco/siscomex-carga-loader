@@ -31,20 +31,14 @@ class SiscomexCargaLoader {
             linhaTipo3ToSiscomexConteinerVazio(linhaTipo3ConteinerVazio, siscomexEscala)
         }
 
-        def ultimoCEMercanteMBL;
         arquivoSiscomexCarga.linhasTipo4CEMercante.each { linhaTipo4CEMercante ->
-            if (linhaTipo4CEMercante.tipoConhecimento == 'BL') {
-                linhaTipo4BLToSiscomexCEMercante(linhaTipo4CEMercante, siscomexEscala)
+            if (linhaTipo4CEMercante.tipoConhecimento == 'BL' || linhaTipo4CEMercante.tipoConhecimento == 'MBL') {
+                linhaTipo4MasterToSiscomexCEMercante(linhaTipo4CEMercante, siscomexEscala)
                 return
             }
 
-            if (linhaTipo4CEMercante.tipoConhecimento == 'MBL') {
-                ultimoCEMercanteMBL = linhaTipo4MBLToSiscomexCEMercante(linhaTipo4CEMercante, siscomexEscala)
-                return
-            }
-
-            if (linhaTipo4CEMercante.tipoConhecimento == 'HBL') {
-                linhaTipo4HBLToSiscomexCEMercante(linhaTipo4CEMercante, ultimoCEMercanteMBL)
+            if (linhaTipo4CEMercante.tipoConhecimento == 'MHBL' || linhaTipo4CEMercante.tipoConhecimento == 'HBL') {
+                linhaTipo4HouseToSiscomexCEMercante(linhaTipo4CEMercante, siscomexEscala)
                 return
             }
         }
@@ -75,46 +69,43 @@ class SiscomexCargaLoader {
     }
 
     void linhaTipo3ToSiscomexConteinerVazio(LinhaTipo3ConteinerVazio linhaTipo3ConteinerVazio, SiscomexEscala siscomexEscala) {
-        SiscomexConteinerVazio siscomexConteinerVazio = new SiscomexConteinerVazio()
-        copyProperties(linhaTipo3ConteinerVazio, siscomexConteinerVazio)
-        siscomexConteinerVazio.manifesto = siscomexEscala.manifestos.find { it.numeroManifesto == siscomexConteinerVazio.numeroManifesto }
-        siscomexConteinerVazio.manifesto?.conteineresVazios << siscomexConteinerVazio
-    }
-
-    void linhaTipo4BLToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteBL, SiscomexEscala siscomexEscala) {
-        SiscomexCEMercante ceMercanteBL = new SiscomexCEMercante()
-        copyProperties(linhaTipo4CEMercanteBL, ceMercanteBL)
-        ceMercanteBL.manifesto = siscomexEscala.manifestos.find { it.numeroManifesto == ceMercanteBL.ultimoNumeroManifesto }
-        if(!ceMercanteBL.manifesto) {
-            ceMercanteBL.manifesto = siscomexEscala.manifestos.find { it.numeroManifesto == ceMercanteBL.penultimoNumeroManifesto }
-        }
-
-        if (!ceMercanteBL.manifesto) {
-            println "Warning processing CEMercante. Manifesto not found: numeroManifesto: ${ceMercanteBL.ultimoNumeroManifesto} or ${ceMercanteBL.penultimoNumeroManifesto}"
+        SiscomexConteinerVazio conteinerVazio = new SiscomexConteinerVazio()
+        copyProperties(linhaTipo3ConteinerVazio, conteinerVazio)
+        conteinerVazio.manifesto = siscomexEscala.manifestos.find { it.numeroManifesto == conteinerVazio.numeroManifesto }
+        if (!conteinerVazio.manifesto) {
+            println "Warning processing ConteinerVazio. Manifesto not found: numeroManifesto: ${conteinerVazio.numeroManifesto}"
+            siscomexEscala.conteinerVazioNaoVinculados << conteinerVazio
             return
         }
-        ceMercanteBL.manifesto.cesMercantes << ceMercanteBL
+        conteinerVazio.manifesto?.conteineresVazios << conteinerVazio
     }
 
-    SiscomexCEMercante linhaTipo4MBLToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteMBL, SiscomexEscala siscomexEscala) {
-        SiscomexCEMercante ceMercanteMBL = new SiscomexCEMercante()
-        copyProperties(linhaTipo4CEMercanteMBL, ceMercanteMBL)
-        ceMercanteMBL.manifesto = siscomexEscala.manifestos.find { it.numeroManifesto == ceMercanteMBL.ultimoNumeroManifesto }
-        if (!ceMercanteMBL.manifesto) {
-            println "Warning processing CEMercante. Manifesto not found: numeroManifesto: ${ceMercanteMBL.ultimoNumeroManifesto}"
+    void linhaTipo4MasterToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteBL, SiscomexEscala siscomexEscala) {
+        SiscomexCEMercante ceMercanteMaster = new SiscomexCEMercante()
+        copyProperties(linhaTipo4CEMercanteBL, ceMercanteMaster)
+        ceMercanteMaster.manifesto = findManifesto(ceMercanteMaster, siscomexEscala)
+
+        if (!ceMercanteMaster.manifesto) {
+            println "Warning processing CEMercante. Manifesto not found: numeroManifesto: ${ceMercanteMaster.numerosManifestosValidos}"
+            siscomexEscala.cesMercantesNaoVinculados << ceMercanteMaster
             return
         }
-        ceMercanteMBL.manifesto.cesMercantes << ceMercanteMBL
-        return ceMercanteMBL
+        ceMercanteMaster.manifesto.cesMercantes << ceMercanteMaster
     }
 
-    void linhaTipo4HBLToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteHBL, SiscomexCEMercante ceMercanteMBL) {
-        SiscomexCEMercante ceMercanteHBL = new SiscomexCEMercante()
-        copyProperties(linhaTipo4CEMercanteHBL, ceMercanteHBL)
-        ceMercanteHBL.ceMercanteMBL = ceMercanteMBL
-        ceMercanteMBL.cesMercantesHBL << ceMercanteHBL
-        ceMercanteHBL.manifesto = ceMercanteMBL.manifesto
-        ceMercanteMBL.manifesto?.cesMercantes << ceMercanteHBL
+    void linhaTipo4HouseToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteHBL, SiscomexEscala siscomexEscala) {
+        SiscomexCEMercante ceMercanteHouse = new SiscomexCEMercante()
+        copyProperties(linhaTipo4CEMercanteHBL, ceMercanteHouse)
+        SiscomexCEMercante ceMercanteMaster = findCEMercante(ceMercanteHouse.numeroCEMaster, siscomexEscala)
+        if (!ceMercanteMaster) {
+            println "Warning processing CEMercanteMaster. CEMercanteMaster not found: numeroCEMaster: ${ceMercanteHouse.numeroCEMaster}"
+            siscomexEscala.cesMercantesNaoVinculados << ceMercanteHouse
+            return
+        }
+        ceMercanteHouse.ceMercanteMaster = ceMercanteMaster
+        ceMercanteMaster.cesMercantesHouse << ceMercanteHouse
+        ceMercanteHouse.manifesto = ceMercanteMaster.manifesto
+        ceMercanteHouse.manifesto?.cesMercantes << ceMercanteHouse
     }
 
     void linhaTipo5ItemCargaToSiscomexItemCarga(LinhaTipo5ItemCarga linhaTipo5ItemCarga, SiscomexEscala siscomexEscala) {
@@ -123,6 +114,7 @@ class SiscomexCargaLoader {
         itemCarga.ceMercante = findCEMercante(itemCarga.numeroCEMercante, siscomexEscala)
         if (!itemCarga.ceMercante) {
             println "Warning processing ItemCarga. CEMercante not found: numeroCEMercante: ${itemCarga.numeroCEMercante}"
+            siscomexEscala.itensCargaNaoVinculados << itemCarga
             return
         }
         itemCarga.ceMercante.itensCarga << itemCarga
@@ -134,9 +126,19 @@ class SiscomexCargaLoader {
         ncm.itemCarga = findItemCarga(ncm.numeroCEMercante, ncm.numeroItemCarga, siscomexEscala)
         if (!ncm.itemCarga) {
             println "Warning processing NCM. ItemCarga not found: numeroCEMercante: ${ncm.numeroCEMercante} / numeroItemCarga: ${ncm.numeroItemCarga}"
+            siscomexEscala.ncmsNaoVinculados << ncm
             return
         }
         ncm.itemCarga.ncms << ncm
+    }
+
+    SiscomexManifesto findManifesto(SiscomexCEMercante ceMercante, SiscomexEscala escala) {
+        for (String numeroManifesto: ceMercante.numerosManifestosValidos) {
+            SiscomexManifesto manifesto = escala.manifestos.find { it.numeroManifesto == numeroManifesto }
+            if (manifesto) {
+                return manifesto
+            }
+        }
     }
 
     SiscomexCEMercante findCEMercante(String numeroCEMercante, SiscomexEscala escala) {
