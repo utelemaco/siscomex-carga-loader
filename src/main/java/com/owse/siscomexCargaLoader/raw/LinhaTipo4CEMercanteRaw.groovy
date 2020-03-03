@@ -1,6 +1,6 @@
 package com.owse.siscomexCargaLoader.raw
 
-class LinhaTipo4CEMercante {
+class LinhaTipo4CEMercanteRaw {
 
     String linhaArquivoOriginal
 

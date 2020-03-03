@@ -1,6 +1,6 @@
 package com.owse.siscomexCargaLoader.raw
 
-class LinhaTipo2Manifesto {
+class LinhaTipo2ManifestoRaw {
 
     String linhaArquivoOriginal
 

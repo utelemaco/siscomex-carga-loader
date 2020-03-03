@@ -1,6 +1,6 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo1Escala
+import com.owse.siscomexCargaLoader.raw.LinhaTipo1EscalaRaw
 import org.junit.Test
 
 class LinhaTipo1EscalaLoaderTest {
@@ -10,7 +10,7 @@ class LinhaTipo1EscalaLoaderTest {
         LinhaTipo1EscalaLoader loader  = new LinhaTipo1EscalaLoader()
         def line = '1190002914729351799   LOG-IN PANTANAL                                        2019090120190901                                                                                                                                                                                                                                                         271                     #'
 
-        LinhaTipo1Escala linhaTipo1Escala = loader.lineToObjetc(line)
+        LinhaTipo1EscalaRaw linhaTipo1Escala = loader.lineToObjetc(line)
         assert linhaTipo1Escala
         assert linhaTipo1Escala.tipoRegistro == '1'
         assert linhaTipo1Escala.numeroEscala == '19000291472'

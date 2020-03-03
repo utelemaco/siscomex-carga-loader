@@ -1,12 +1,12 @@
 package com.owse.siscomexCargaLoader.loader
 
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo6NCM
+import com.owse.siscomexCargaLoader.raw.LinhaTipo6NCMRaw
 
 class LinhaTipo6NCMLoader {
 
-    LinhaTipo6NCM lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo6NCM linhaTipo6NCM = new LinhaTipo6NCM()
+    LinhaTipo6NCMRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo6NCMRaw linhaTipo6NCM = new LinhaTipo6NCMRaw()
         linhaTipo6NCM.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

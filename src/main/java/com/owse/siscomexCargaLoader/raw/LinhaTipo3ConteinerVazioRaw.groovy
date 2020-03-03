@@ -1,15 +1,14 @@
-package com.owse.siscomexCargaLoader.domain
+package com.owse.siscomexCargaLoader.raw
 
-class SiscomexConteinerVazioDTO {
+class LinhaTipo3ConteinerVazioRaw {
 
     String linhaArquivoOriginal
 
+    String tipoRegistro
     String numeroManifesto
     String identificacaoConteiner
     String capacidadeConteiner
     String codigoTipoConteiner
     String tipoConteiner
-
-    SiscomexManifestoDTO manifesto
-
+    String indicadorFimRegistro
 }

@@ -1,9 +1,10 @@
-package com.owse.siscomexCargaLoader.domain
+package com.owse.siscomexCargaLoader.raw
 
-class SiscomexEscalaDTO {
+class LinhaTipo1EscalaRaw {
 
     String linhaArquivoOriginal
 
+    String tipoRegistro
     String numeroEscala
     String codigoIMOEmbarcacao
     String nomeEmbarcacao
@@ -21,9 +22,5 @@ class SiscomexEscalaDTO {
     String numeroViagem
     String dataDeadlineSolicitarDTSC
     String horaDeadlineSolicitarDTSC
-
-    List<SiscomexManifestoDTO> manifestos = []
-
-
-
+    String indicadorFimRegistro
 }

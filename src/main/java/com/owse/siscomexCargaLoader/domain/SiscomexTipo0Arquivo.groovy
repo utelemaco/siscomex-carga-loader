@@ -1,10 +1,10 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexArquivoDTO {
+class SiscomexTipo0Arquivo {
 
     String logProcessamento = ""
 
-    SiscomexEscalaDTO escala
+    SiscomexTipo1Escala escala
 
     List<String> linhasNaoVinculadas = []
 

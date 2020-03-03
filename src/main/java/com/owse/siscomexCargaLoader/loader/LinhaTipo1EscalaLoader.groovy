@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo1Escala
+import com.owse.siscomexCargaLoader.raw.LinhaTipo1EscalaRaw
 
 class LinhaTipo1EscalaLoader {
 
-    LinhaTipo1Escala lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo1Escala linhaTipo1Escala = new LinhaTipo1Escala()
+    LinhaTipo1EscalaRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo1EscalaRaw linhaTipo1Escala = new LinhaTipo1EscalaRaw()
         linhaTipo1Escala.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

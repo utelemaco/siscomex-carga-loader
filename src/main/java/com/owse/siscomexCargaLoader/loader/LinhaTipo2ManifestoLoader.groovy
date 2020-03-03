@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo2Manifesto
+import com.owse.siscomexCargaLoader.raw.LinhaTipo2ManifestoRaw
 
 class LinhaTipo2ManifestoLoader {
 
-    LinhaTipo2Manifesto lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo2Manifesto linhaTipo2Manifesto = new LinhaTipo2Manifesto()
+    LinhaTipo2ManifestoRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo2ManifestoRaw linhaTipo2Manifesto = new LinhaTipo2ManifestoRaw()
         linhaTipo2Manifesto.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

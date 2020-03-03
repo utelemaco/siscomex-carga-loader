@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo5ItemCarga
+import com.owse.siscomexCargaLoader.raw.LinhaTipo5ItemCargaRaw
 
 class LinhaTipo5ItemCargaLoader {
 
-    LinhaTipo5ItemCarga lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo5ItemCarga linhaTipo5ItemCarga = new LinhaTipo5ItemCarga()
+    LinhaTipo5ItemCargaRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo5ItemCargaRaw linhaTipo5ItemCarga = new LinhaTipo5ItemCargaRaw()
         linhaTipo5ItemCarga.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

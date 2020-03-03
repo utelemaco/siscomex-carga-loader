@@ -1,8 +1,8 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.ArquivoSiscomexCarga
+import com.owse.siscomexCargaLoader.raw.Tipo0ArquivoRaw
 
-class ArquivoSiscomexCargaLoader {
+class ArquivoTipo0Loader {
 
     LinhaTipo1EscalaLoader linhaTipo1EscalaLoader = new LinhaTipo1EscalaLoader()
     LinhaTipo2ManifestoLoader linhaTipo2ManifestoLoader = new LinhaTipo2ManifestoLoader()
@@ -11,8 +11,8 @@ class ArquivoSiscomexCargaLoader {
     LinhaTipo5ItemCargaLoader linhaTipo5ItemCargaLoader = new LinhaTipo5ItemCargaLoader()
     LinhaTipo6NCMLoader linhaTipo6NCMLoader = new LinhaTipo6NCMLoader()
 
-    ArquivoSiscomexCarga loadFromByteArray(byte[] fileContent) {
-        ArquivoSiscomexCarga arquivoSiscomexCarga = new ArquivoSiscomexCarga()
+    Tipo0ArquivoRaw loadFromByteArray(byte[] fileContent) {
+        Tipo0ArquivoRaw arquivoSiscomexCarga = new Tipo0ArquivoRaw()
 
         List<String> errors = []
 

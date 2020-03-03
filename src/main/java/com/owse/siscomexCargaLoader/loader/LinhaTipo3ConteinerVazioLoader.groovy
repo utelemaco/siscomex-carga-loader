@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo3ConteinerVazio
+import com.owse.siscomexCargaLoader.raw.LinhaTipo3ConteinerVazioRaw
 
 class LinhaTipo3ConteinerVazioLoader {
 
-    LinhaTipo3ConteinerVazio lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo3ConteinerVazio linhaTipo3ConteinerVazio = new LinhaTipo3ConteinerVazio()
+    LinhaTipo3ConteinerVazioRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo3ConteinerVazioRaw linhaTipo3ConteinerVazio = new LinhaTipo3ConteinerVazioRaw()
         linhaTipo3ConteinerVazio.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

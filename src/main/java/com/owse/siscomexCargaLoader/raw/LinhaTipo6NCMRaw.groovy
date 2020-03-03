@@ -1,6 +1,6 @@
 package com.owse.siscomexCargaLoader.raw
 
-class LinhaTipo6NCM {
+class LinhaTipo6NCMRaw {
 
     String linhaArquivoOriginal
 

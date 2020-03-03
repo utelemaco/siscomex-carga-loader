@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.domain.SiscomexArquivoDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexEscalaDTO
-import com.owse.siscomexCargaLoader.raw.ArquivoSiscomexCarga
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo0Arquivo
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo1Escala
+import com.owse.siscomexCargaLoader.raw.Tipo0ArquivoRaw
 import org.junit.Test
 
-class ArquivoSiscomexCargaLoaderTest {
+class ArquivoTipo0LoaderTest {
 
     String fileContent = """40419031919016381519301725584                                                                                                                     10BL  NNACIONAL                 04CARREGADA                          20190902 6557                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             07201916001040ARAUJO CABRAL & ALVES LTDA                                                                                         N                                                                                                                                                                                                                                                                                                                                                  10524837000193LM - COMERCIO ATACADISTA DE MATERIAL DE CONSTRUCAO LTDA                                                            LM - COMERCIO LTDA - ME                                                                                                                                                                                                                                      201908281 CONTAINER DE 40HC DIZENDO CONTER 450 VOLUMES DE APPIA GRIGIO 60,60 VOLUMES DE PIETRA NATURALE,180 VOLUMES DE PL CER CREMA 60. NCM 6907                                                                                                                                                                                                                                                                                                                                                                                  BRVIXVITÓRIA                                                     BRPECPECEM                                                       42278291000124LOG-IN - LOGISTICA INTERMODAL S/A                                                                                                                                                                                                                                                                                                                                                                                                                          N               0000270981800000000000003VALOR COMERCIAL: 24184,71 DATA DE COLETA DA CARGA NO ARMAZEM DO EMBARCADOR: 28/08/2019                                                                                                                                                                                                                                                                                     HHHOUSE TO HOUSE                                                                    0317900#
 504190319190163800011TCNU79961934045G1HIGH CUBE (PASSIVE VENTS)(40'/9'6)                          003880000 889879                                                                                                                                                                                                                                                                                                                                     0000270981800000000076000                                                                                                                                                                                                                                                                   #
@@ -31,9 +31,9 @@ class ArquivoSiscomexCargaLoaderTest {
 
     @Test
     public void testArquivoSiscomexCargaLoader() {
-        ArquivoSiscomexCargaLoader loader  = new ArquivoSiscomexCargaLoader()
+        ArquivoTipo0Loader loader  = new ArquivoTipo0Loader()
 
-        ArquivoSiscomexCarga arquivoSiscomexCarga = loader.loadFromByteArray(fileContent.getBytes())
+        Tipo0ArquivoRaw arquivoSiscomexCarga = loader.loadFromByteArray(fileContent.getBytes())
         assert arquivoSiscomexCarga
     }
 
@@ -41,37 +41,37 @@ class ArquivoSiscomexCargaLoaderTest {
     public void testSiscomexCargaLoader() {
         SiscomexCargaLoader loader  = new SiscomexCargaLoader()
 
-        SiscomexEscalaDTO escala = loader.loadFromByteArray(fileContent.getBytes())
-        assert escala
+        SiscomexTipo0Arquivo arquivo = loader.loadFromByteArray(fileContent.getBytes())
+        assert arquivo
     }
 
     @Test
     public void testFromFileF_C079314127_D190903_H102708_M012() {
-        SiscomexArquivoDTO arquivo = fileToArquivo('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
+        SiscomexTipo0Arquivo arquivo = fileToArquivo('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
         assert arquivo
         assert arquivo.escala
     }
 
     @Test
     public void testFromFileF_C088813997_D190430_H113147_M658 () {
-        SiscomexEscalaDTO escala = fileToArquivo('/Users/utelemaco/Downloads/F_C088813997_D190430_H113147_M658.txt')
+        SiscomexTipo0Arquivo arquivo = fileToArquivo('/Users/utelemaco/Downloads/F_C088813997_D190430_H113147_M658.txt')
         assert arquivo
         assert arquivo.escala
     }
 
     @Test
     public void testFromFileF_C103801527_D200128_H094042_M410 () {
-        SiscomexEscalaDTO escala = fileToArquivo('/Users/utelemaco/Downloads/F_C103801527_D200128_H094042_M410.txt')
+        SiscomexTipo0Arquivo arquivo = fileToArquivo('/Users/utelemaco/Downloads/F_C103801527_D200128_H094042_M410.txt')
         assert arquivo
         assert arquivo.escala
     }
 
-    private SiscomexArquivoDTO fileToArquivo(String filePathAndName) {
+    private SiscomexTipo0Arquivo fileToArquivo(String filePathAndName) {
         File file = new File(filePathAndName)
         println new Date()
         SiscomexCargaLoader loader = new SiscomexCargaLoader()
-        SiscomexArquivoDTO arquivo = loader.loadFromByteArray(file.getBytes())
-        SiscomexEscalaDTO escala = arquivo.escala
+        SiscomexTipo0Arquivo arquivo = loader.loadFromByteArray(file.getBytes())
+        SiscomexTipo1Escala escala = arquivo.escala
         println new Date()
         int i = 1;
         println "${i++} Escala: ${escala.numeroEscala}"

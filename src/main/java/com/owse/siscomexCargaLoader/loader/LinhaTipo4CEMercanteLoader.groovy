@@ -1,11 +1,11 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.raw.LinhaTipo4CEMercante
+import com.owse.siscomexCargaLoader.raw.LinhaTipo4CEMercanteRaw
 
 class LinhaTipo4CEMercanteLoader {
 
-    LinhaTipo4CEMercante lineToObjetc(String linhaArquivoOriginal) {
-        LinhaTipo4CEMercante linhaTipo4CEMercante = new LinhaTipo4CEMercante()
+    LinhaTipo4CEMercanteRaw lineToObjetc(String linhaArquivoOriginal) {
+        LinhaTipo4CEMercanteRaw linhaTipo4CEMercante = new LinhaTipo4CEMercanteRaw()
         linhaTipo4CEMercante.linhaArquivoOriginal = linhaArquivoOriginal
 
         int token = 0

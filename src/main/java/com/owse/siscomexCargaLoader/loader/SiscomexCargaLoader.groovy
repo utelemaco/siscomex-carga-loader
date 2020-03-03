@@ -1,28 +1,28 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.domain.SiscomexArquivoDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexCEMercanteDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexConteinerVazioDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexEscalaDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexItemCargaDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexManifestoDTO
-import com.owse.siscomexCargaLoader.domain.SiscomexNCMDTO
-import com.owse.siscomexCargaLoader.raw.ArquivoSiscomexCarga
-import com.owse.siscomexCargaLoader.raw.LinhaTipo1Escala
-import com.owse.siscomexCargaLoader.raw.LinhaTipo2Manifesto
-import com.owse.siscomexCargaLoader.raw.LinhaTipo3ConteinerVazio
-import com.owse.siscomexCargaLoader.raw.LinhaTipo4CEMercante
-import com.owse.siscomexCargaLoader.raw.LinhaTipo5ItemCarga
-import com.owse.siscomexCargaLoader.raw.LinhaTipo6NCM
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo0Arquivo
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo4CEMercante
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo3ConteinerVazio
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo1Escala
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo5ItemCarga
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo2Manifesto
+import com.owse.siscomexCargaLoader.domain.SiscomexTipo6NCM
+import com.owse.siscomexCargaLoader.raw.Tipo0ArquivoRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo1EscalaRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo2ManifestoRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo3ConteinerVazioRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo4CEMercanteRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo5ItemCargaRaw
+import com.owse.siscomexCargaLoader.raw.LinhaTipo6NCMRaw
 
 class SiscomexCargaLoader {
 
-    ArquivoSiscomexCargaLoader arquivoLoader = new ArquivoSiscomexCargaLoader()
+    ArquivoTipo0Loader arquivoLoader = new ArquivoTipo0Loader()
 
-    SiscomexArquivoDTO loadFromByteArray(byte[] fileContent) {
-        ArquivoSiscomexCarga arquivoSiscomexCarga = arquivoLoader.loadFromByteArray(fileContent)
+    SiscomexTipo0Arquivo loadFromByteArray(byte[] fileContent) {
+        Tipo0ArquivoRaw arquivoSiscomexCarga = arquivoLoader.loadFromByteArray(fileContent)
 
-        SiscomexArquivoDTO siscomexArquivo = new SiscomexArquivoDTO()
+        SiscomexTipo0Arquivo siscomexArquivo = new SiscomexTipo0Arquivo()
         siscomexArquivo.logProcessamento = arquivoSiscomexCarga.logProcessamento
 
         siscomexArquivo.escala = linhaTipo1ToSiscomexEscala(arquivoSiscomexCarga.linhasTipo1Escala[0])
@@ -66,21 +66,23 @@ class SiscomexCargaLoader {
 
     }
 
-    SiscomexEscalaDTO linhaTipo1ToSiscomexEscala(LinhaTipo1Escala linhaTipo1Escala) {
-        SiscomexEscalaDTO escala = new SiscomexEscalaDTO()
-        copyProperties(linhaTipo1Escala, escala)
+    SiscomexTipo1Escala linhaTipo1ToSiscomexEscala(LinhaTipo1EscalaRaw linhaTipo1Escala) {
+        SiscomexTipo1Escala escala = new SiscomexTipo1Escala()
+        if (linhaTipo1Escala) {
+            copyProperties(linhaTipo1Escala, escala)
+        }
         return escala
     }
 
-    void linhaTipo2ToSiscomexManifesto(LinhaTipo2Manifesto linhaTipo2Manifesto, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexManifestoDTO siscomexManifesto = new SiscomexManifestoDTO()
+    void linhaTipo2ToSiscomexManifesto(LinhaTipo2ManifestoRaw linhaTipo2Manifesto, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo2Manifesto siscomexManifesto = new SiscomexTipo2Manifesto()
         copyProperties(linhaTipo2Manifesto, siscomexManifesto)
         siscomexManifesto.escala = siscomexArquivo.escala
         siscomexArquivo.escala.manifestos << siscomexManifesto
     }
 
-    void linhaTipo3ToSiscomexConteinerVazio(LinhaTipo3ConteinerVazio linhaTipo3ConteinerVazio, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexConteinerVazioDTO conteinerVazio = new SiscomexConteinerVazioDTO()
+    void linhaTipo3ToSiscomexConteinerVazio(LinhaTipo3ConteinerVazioRaw linhaTipo3ConteinerVazio, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo3ConteinerVazio conteinerVazio = new SiscomexTipo3ConteinerVazio()
         copyProperties(linhaTipo3ConteinerVazio, conteinerVazio)
         conteinerVazio.manifesto = siscomexArquivo.escala.manifestos.find { it.numeroManifesto == conteinerVazio.numeroManifesto }
         if (!conteinerVazio.manifesto) {
@@ -90,8 +92,8 @@ class SiscomexCargaLoader {
         conteinerVazio.manifesto?.conteineresVazios << conteinerVazio
     }
 
-    void linhaTipo4MasterToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteBL, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexCEMercanteDTO ceMercanteMaster = new SiscomexCEMercanteDTO()
+    void linhaTipo4MasterToSiscomexCEMercante(LinhaTipo4CEMercanteRaw linhaTipo4CEMercanteBL, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo4CEMercante ceMercanteMaster = new SiscomexTipo4CEMercante()
         copyProperties(linhaTipo4CEMercanteBL, ceMercanteMaster)
         ceMercanteMaster.manifesto = findManifesto(ceMercanteMaster, siscomexArquivo.escala)
 
@@ -102,10 +104,10 @@ class SiscomexCargaLoader {
         ceMercanteMaster.manifesto.cesMercantes << ceMercanteMaster
     }
 
-    void linhaTipo4HouseToSiscomexCEMercante(LinhaTipo4CEMercante linhaTipo4CEMercanteHBL, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexCEMercanteDTO ceMercanteHouse = new SiscomexCEMercanteDTO()
+    void linhaTipo4HouseToSiscomexCEMercante(LinhaTipo4CEMercanteRaw linhaTipo4CEMercanteHBL, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo4CEMercante ceMercanteHouse = new SiscomexTipo4CEMercante()
         copyProperties(linhaTipo4CEMercanteHBL, ceMercanteHouse)
-        SiscomexCEMercanteDTO ceMercanteMaster = findCEMercante(ceMercanteHouse.numeroCEMaster, siscomexArquivo.escala)
+        SiscomexTipo4CEMercante ceMercanteMaster = findCEMercante(ceMercanteHouse.numeroCEMaster, siscomexArquivo.escala)
         if (!ceMercanteMaster) {
             siscomexArquivo.linhasNaoVinculadas << linhaTipo4CEMercanteHBL.linhaArquivoOriginal
             return
@@ -116,8 +118,8 @@ class SiscomexCargaLoader {
         ceMercanteHouse.manifesto?.cesMercantes << ceMercanteHouse
     }
 
-    void linhaTipo5ItemCargaToSiscomexItemCarga(LinhaTipo5ItemCarga linhaTipo5ItemCarga, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexItemCargaDTO itemCarga = new SiscomexItemCargaDTO()
+    void linhaTipo5ItemCargaToSiscomexItemCarga(LinhaTipo5ItemCargaRaw linhaTipo5ItemCarga, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo5ItemCarga itemCarga = new SiscomexTipo5ItemCarga()
         copyProperties(linhaTipo5ItemCarga, itemCarga)
         itemCarga.ceMercante = findCEMercante(itemCarga.numeroCEMercante, siscomexArquivo.escala)
         if (!itemCarga.ceMercante) {
@@ -127,8 +129,8 @@ class SiscomexCargaLoader {
         itemCarga.ceMercante.itensCarga << itemCarga
     }
 
-    void linhaTipo6NCMToSiscomexNCM(LinhaTipo6NCM linhaTipo6NCM, SiscomexArquivoDTO siscomexArquivo) {
-        SiscomexNCMDTO ncm = new SiscomexNCMDTO()
+    void linhaTipo6NCMToSiscomexNCM(LinhaTipo6NCMRaw linhaTipo6NCM, SiscomexTipo0Arquivo siscomexArquivo) {
+        SiscomexTipo6NCM ncm = new SiscomexTipo6NCM()
         copyProperties(linhaTipo6NCM, ncm)
         ncm.itemCarga = findItemCarga(ncm.numeroCEMercante, ncm.numeroItemCarga, siscomexArquivo.escala)
         if (!ncm.itemCarga) {
@@ -138,18 +140,18 @@ class SiscomexCargaLoader {
         ncm.itemCarga.ncms << ncm
     }
 
-    SiscomexManifestoDTO findManifesto(SiscomexCEMercanteDTO ceMercante, SiscomexEscalaDTO escala) {
+    SiscomexTipo2Manifesto findManifesto(SiscomexTipo4CEMercante ceMercante, SiscomexTipo1Escala escala) {
         for (String numeroManifesto: ceMercante.numerosManifestosValidos) {
-            SiscomexManifestoDTO manifesto = escala.manifestos.find { it.numeroManifesto == numeroManifesto }
+            SiscomexTipo2Manifesto manifesto = escala.manifestos.find { it.numeroManifesto == numeroManifesto }
             if (manifesto) {
                 return manifesto
             }
         }
     }
 
-    SiscomexCEMercanteDTO findCEMercante(String numeroCEMercante, SiscomexEscalaDTO escala) {
-        for (SiscomexManifestoDTO manifesto: escala.manifestos) {
-            for (SiscomexCEMercanteDTO ceMercante: manifesto.cesMercantes) {
+    SiscomexTipo4CEMercante findCEMercante(String numeroCEMercante, SiscomexTipo1Escala escala) {
+        for (SiscomexTipo2Manifesto manifesto: escala.manifestos) {
+            for (SiscomexTipo4CEMercante ceMercante: manifesto.cesMercantes) {
                 if (ceMercante.numeroCEMercante == numeroCEMercante) {
                     return ceMercante
                 }
@@ -157,10 +159,10 @@ class SiscomexCargaLoader {
         }
     }
 
-    SiscomexItemCargaDTO findItemCarga(String numeroCEMercante, String numeroItemCarga, SiscomexEscalaDTO escala) {
-        for (SiscomexManifestoDTO manifesto: escala.manifestos) {
-            for (SiscomexCEMercanteDTO ceMercante: manifesto.cesMercantes) {
-                for (SiscomexItemCargaDTO itemCarga: ceMercante.itensCarga) {
+    SiscomexTipo5ItemCarga findItemCarga(String numeroCEMercante, String numeroItemCarga, SiscomexTipo1Escala escala) {
+        for (SiscomexTipo2Manifesto manifesto: escala.manifestos) {
+            for (SiscomexTipo4CEMercante ceMercante: manifesto.cesMercantes) {
+                for (SiscomexTipo5ItemCarga itemCarga: ceMercante.itensCarga) {
                     if (itemCarga.numeroCEMercante == numeroCEMercante && itemCarga.numeroItemCarga == numeroItemCarga) {
                         return itemCarga
                     }
