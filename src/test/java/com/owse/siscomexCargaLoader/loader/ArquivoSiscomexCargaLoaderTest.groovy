@@ -1,6 +1,7 @@
 package com.owse.siscomexCargaLoader.loader
 
-import com.owse.siscomexCargaLoader.domain.SiscomexEscala
+import com.owse.siscomexCargaLoader.domain.SiscomexArquivoDTO
+import com.owse.siscomexCargaLoader.domain.SiscomexEscalaDTO
 import com.owse.siscomexCargaLoader.raw.ArquivoSiscomexCarga
 import org.junit.Test
 
@@ -40,33 +41,37 @@ class ArquivoSiscomexCargaLoaderTest {
     public void testSiscomexCargaLoader() {
         SiscomexCargaLoader loader  = new SiscomexCargaLoader()
 
-        SiscomexEscala escala = loader.loadFromByteArray(fileContent.getBytes())
+        SiscomexEscalaDTO escala = loader.loadFromByteArray(fileContent.getBytes())
         assert escala
     }
 
     @Test
     public void testFromFileF_C079314127_D190903_H102708_M012() {
-        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
-        assert escala
+        SiscomexArquivoDTO arquivo = fileToArquivo('/Users/utelemaco/Downloads/F_C079314127_D190903_H102708_M012.txt')
+        assert arquivo
+        assert arquivo.escala
     }
 
     @Test
     public void testFromFileF_C088813997_D190430_H113147_M658 () {
-        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C088813997_D190430_H113147_M658.txt')
-        assert escala
+        SiscomexEscalaDTO escala = fileToArquivo('/Users/utelemaco/Downloads/F_C088813997_D190430_H113147_M658.txt')
+        assert arquivo
+        assert arquivo.escala
     }
 
     @Test
     public void testFromFileF_C103801527_D200128_H094042_M410 () {
-        SiscomexEscala escala = fileToEscala('/Users/utelemaco/Downloads/F_C103801527_D200128_H094042_M410.txt')
-        assert escala
+        SiscomexEscalaDTO escala = fileToArquivo('/Users/utelemaco/Downloads/F_C103801527_D200128_H094042_M410.txt')
+        assert arquivo
+        assert arquivo.escala
     }
 
-    private SiscomexEscala fileToEscala(String filePathAndName) {
+    private SiscomexArquivoDTO fileToArquivo(String filePathAndName) {
         File file = new File(filePathAndName)
         println new Date()
         SiscomexCargaLoader loader = new SiscomexCargaLoader()
-        SiscomexEscala escala = loader.loadFromByteArray(file.getBytes())
+        SiscomexArquivoDTO arquivo = loader.loadFromByteArray(file.getBytes())
+        SiscomexEscalaDTO escala = arquivo.escala
         println new Date()
         int i = 1;
         println "${i++} Escala: ${escala.numeroEscala}"
@@ -89,6 +94,6 @@ class ArquivoSiscomexCargaLoaderTest {
                 }
             }
         }
-        escala
+        arquivo
     }
 }

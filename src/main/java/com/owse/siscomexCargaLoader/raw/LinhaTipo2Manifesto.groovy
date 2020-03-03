@@ -2,6 +2,8 @@ package com.owse.siscomexCargaLoader.raw
 
 class LinhaTipo2Manifesto {
 
+    String linhaArquivoOriginal
+
     String tipoRegistro
     String numeroEscala
     String numeroManifesto

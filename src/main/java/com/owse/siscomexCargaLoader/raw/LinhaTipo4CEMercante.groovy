@@ -2,6 +2,8 @@ package com.owse.siscomexCargaLoader.raw
 
 class LinhaTipo4CEMercante {
 
+    String linhaArquivoOriginal
+
     String tipoRegistro
     String numeroCEMercante
     String numeroManifesto01

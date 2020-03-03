@@ -14,6 +14,8 @@ class ArquivoSiscomexCargaLoader {
     ArquivoSiscomexCarga loadFromByteArray(byte[] fileContent) {
         ArquivoSiscomexCarga arquivoSiscomexCarga = new ArquivoSiscomexCarga()
 
+        List<String> errors = []
+
         def is = new ByteArrayInputStream(fileContent)
         int lineNumber = 1;
         is.eachLine { linha ->
@@ -42,12 +44,20 @@ class ArquivoSiscomexCargaLoader {
                     arquivoSiscomexCarga.linhasTipo6NCM << linhaTipo6NCMLoader.lineToObjetc(linha)
                 }
             } catch(Exception e) {
-                println "Error processing line ${lineNumber}: ${e}"
+                errors <<  "(linha: ${lineNumber}) ${linha}\n      ${e}"
             } finally {
                 lineNumber++;
             }
         }
         is.close()
+
+        arquivoSiscomexCarga.logProcessamento = "Arquivo processado em ${new Date()}.\n"
+        if (errors) {
+            arquivoSiscomexCarga.logProcessamento += "\nErros de parse:\n"
+            errors.each {
+                arquivoSiscomexCarga.logProcessamento += "${it}\n"
+            }
+        }
 
         return arquivoSiscomexCarga
     }

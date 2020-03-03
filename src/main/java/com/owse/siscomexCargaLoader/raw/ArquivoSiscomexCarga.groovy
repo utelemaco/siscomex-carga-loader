@@ -2,6 +2,8 @@ package com.owse.siscomexCargaLoader.raw
 
 class ArquivoSiscomexCarga {
 
+    String logProcessamento
+
     List<LinhaTipo1Escala> linhasTipo1Escala = []
     List<LinhaTipo2Manifesto> linhasTipo2Manifesto = []
     List<LinhaTipo3ConteinerVazio> linhasTipo3ConteinerVazio = []

@@ -1,6 +1,8 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexEscala {
+class SiscomexEscalaDTO {
+
+    String linhaArquivoOriginal
 
     String numeroEscala
     String codigoIMOEmbarcacao
@@ -20,11 +22,8 @@ class SiscomexEscala {
     String dataDeadlineSolicitarDTSC
     String horaDeadlineSolicitarDTSC
 
-    List<SiscomexManifesto> manifestos = []
+    List<SiscomexManifestoDTO> manifestos = []
 
-    List<SiscomexConteinerVazio> conteinerVazioNaoVinculados = []
-    List<SiscomexCEMercante> cesMercantesNaoVinculados = []
-    List<SiscomexItemCarga> itensCargaNaoVinculados = []
-    List<SiscomexNCM> ncmsNaoVinculados = []
+
 
 }

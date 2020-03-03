@@ -2,6 +2,8 @@ package com.owse.siscomexCargaLoader.raw
 
 class LinhaTipo1Escala {
 
+    String linhaArquivoOriginal
+
     String tipoRegistro
     String numeroEscala
     String codigoIMOEmbarcacao

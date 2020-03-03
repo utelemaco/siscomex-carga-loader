@@ -1,6 +1,8 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexConteinerVazio {
+class SiscomexConteinerVazioDTO {
+
+    String linhaArquivoOriginal
 
     String numeroManifesto
     String identificacaoConteiner
@@ -8,6 +10,6 @@ class SiscomexConteinerVazio {
     String codigoTipoConteiner
     String tipoConteiner
 
-    SiscomexManifesto manifesto
+    SiscomexManifestoDTO manifesto
 
 }

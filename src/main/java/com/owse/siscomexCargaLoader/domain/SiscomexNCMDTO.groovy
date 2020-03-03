@@ -1,12 +1,14 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexNCM {
+class SiscomexNCMDTO {
+
+    String linhaArquivoOriginal
 
     String numeroCEMercante
     String numeroItemCarga
     String codigoMercadoria
     String descricaoMercadoria
 
-    SiscomexItemCarga itemCarga
+    SiscomexItemCargaDTO itemCarga
 
 }

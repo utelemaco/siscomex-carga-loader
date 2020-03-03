@@ -1,6 +1,8 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexManifesto {
+class SiscomexManifestoDTO {
+
+    String linhaArquivoOriginal
 
     String numeroEscala
     String numeroManifesto
@@ -24,8 +26,8 @@ class SiscomexManifesto {
     String codigoTipoTrafego
     String nomeTipoTrafego
 
-    SiscomexEscala escala
-    List<SiscomexConteinerVazio> conteineresVazios = []
-    List<SiscomexCEMercante> cesMercantes = []
+    SiscomexEscalaDTO escala
+    List<SiscomexConteinerVazioDTO> conteineresVazios = []
+    List<SiscomexCEMercanteDTO> cesMercantes = []
 
 }

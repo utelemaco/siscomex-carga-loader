@@ -1,6 +1,8 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexCEMercante {
+class SiscomexCEMercanteDTO {
+
+    String linhaArquivoOriginal
 
     String numeroCEMercante
     String numeroManifesto01
@@ -82,10 +84,10 @@ class SiscomexCEMercante {
     String nomeRecintoAduaneiroResponsavelDTSC
     String codigoUnidadeLocalDestinoFinalCarga
 
-    SiscomexManifesto manifesto
-    SiscomexCEMercante ceMercanteMaster
-    List<SiscomexCEMercante> cesMercantesHouse = []
-    List<SiscomexItemCarga> itensCarga = []
+    SiscomexManifestoDTO manifesto
+    SiscomexCEMercanteDTO ceMercanteMaster
+    List<SiscomexCEMercanteDTO> cesMercantesHouse = []
+    List<SiscomexItemCargaDTO> itensCarga = []
 
     List<String> getNumerosManifestosValidos() {
         List<String> numerosManifestosValidos = []

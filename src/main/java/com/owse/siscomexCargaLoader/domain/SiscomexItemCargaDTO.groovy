@@ -1,6 +1,8 @@
 package com.owse.siscomexCargaLoader.domain
 
-class SiscomexItemCarga {
+class SiscomexItemCargaDTO {
+
+    String linhaArquivoOriginal
 
     String numeroCEMercante
     String numeroItemCarga
@@ -37,7 +39,7 @@ class SiscomexItemCarga {
     String codigoBloqueioEscala04
     String descricaoBloqueioEscala04
 
-    SiscomexCEMercante ceMercante
-    List<SiscomexNCM> ncms = []
+    SiscomexCEMercanteDTO ceMercante
+    List<SiscomexNCMDTO> ncms = []
 
 }
